@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-10-29
+
+### Fixed
+- INFO: Library names are not necessary.
+- INFO: Statements in an if should be enclosed in a block.
+
+---
+
 ## [1.0.2] - 2025-10-29
 
 ### Added
@@ -19,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.2] - 2025-10-29
+## [1.0.1] - 2025-10-29
 
 ### Updated
 - Improved README formatting and clarified usage examples.
