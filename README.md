@@ -1,4 +1,4 @@
-# Flutter Template CLI
+# Flutter Clone CLI
 
 A command-line tool to create Flutter projects from custom templates. Similar to `flutter create`, but uses your own project as a template with automatic package ID and project name updates.
 
@@ -110,4 +110,4 @@ MIT License - see LICENSE file for details
 
 ## Support
 
-For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/yourusername/flutter_template_cli).
+For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/ibrahimelnemrtasawk-dev/flutter_clone_cli).
