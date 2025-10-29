@@ -1,16 +1,18 @@
 name: flutter_clone_cli
-description: A CLI tool to create Flutter projects from custom templates
-version: 1.0.1
+description: A CLI tool to create Flutter projects from custom templates.
+version: 1.0.2
 repository: https://github.com/ibrahimelnemrtasawk-dev/flutter_clone_cli
+issue_tracker: https://github.com/ibrahimelnemrtasawk-dev/flutter_clone_cli/issues
+homepage: https://github.com/ibrahimelnemrtasawk-dev/flutter_clone_cli
 
 environment:
   sdk: ^3.9.0
 
 dependencies:
-  args: ^2.4.2
-  path: ^1.9.0
-  yaml: ^3.1.2
-  mason_logger: ^0.2.14
+  args: ^2.7.0
+  path: ^1.9.1
+  yaml: ^3.1.3
+  mason_logger: ^0.3.3
 
 dev_dependencies:
   lints: ^6.0.0
@@ -18,3 +20,14 @@ dev_dependencies:
 
 executables:
   ftcreate: main
+
+platforms:
+  windows:
+  macos:
+  linux:
+
+topics:
+  - flutter
+  - cli
+  - template
+  - codegen

@@ -51,6 +51,14 @@ Options:
   -o, --org               Organization identifier (default: "com.example")
 ```
 
+## 🖥️ Platform Support
+
+`flutter_clone_cli` is a command-line utility designed for desktop platforms:
+- ✅ Windows
+- ✅ macOS
+- ✅ Linux
+- ❌ Not supported on Web, Android, or iOS (uses `dart:io`)
+
 ## How It Works
 
 1. **Copies Template**: Creates a complete copy of your template project

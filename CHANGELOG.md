@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2025-10-29
+
+### Added
+- Example project in `example/` directory to demonstrate usage.
+- Inline documentation comments for public APIs to meet pub.dev score requirements.
+- `analysis_options.yaml` with `public_member_api_docs` rule.
+- Minor improvements to CLI output and validation messages.
+
+### Fixed
+- Missing CHANGELOG entry warning on `dart pub publish --dry-run`.
+- Improved error handling when template path or pubspec.yaml is missing.
+
+---
+
+## [1.0.2] - 2025-10-29
+
+### Updated
+- Improved README formatting and clarified usage examples.
+- No functional or API changes.
+
+---
+
 ## [0.1.0] - 2025-10-29
 
 ### Added
