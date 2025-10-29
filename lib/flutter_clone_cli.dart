@@ -1,4 +1,4 @@
-library flutter_clone_cli;
+library;
 
 import 'dart:io';
 import 'package:path/path.dart' as path;
@@ -127,16 +127,19 @@ class FlutterTemplateCreator {
     );
 
     final libDir = Directory(path.join(projectDir.path, 'lib'));
-    if (await libDir.exists())
+    if (await libDir.exists()) {
       await _replaceInDirectory(libDir, oldName, newName);
+    }
 
     final testDir = Directory(path.join(projectDir.path, 'test'));
-    if (await testDir.exists())
+    if (await testDir.exists()) {
       await _replaceInDirectory(testDir, oldName, newName);
+    }
 
     final readmeFile = File(path.join(projectDir.path, 'README.md'));
-    if (await readmeFile.exists())
+    if (await readmeFile.exists()) {
       await _replaceInFile(readmeFile.path, oldName, newName);
+    }
   }
 
   /// Updates the Android and iOS package identifiers.
