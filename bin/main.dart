@@ -49,26 +49,27 @@ void main(List<String> arguments) async {
     }
 
     final creator = FlutterTemplateCreator(logger: logger);
-    
+
     final progress = logger.progress('Creating project from template');
-    
+
     await creator.createProject(
       projectName: projectName,
       templatePath: templatePath,
       orgId: orgId,
       targetPath: Directory.current.path,
     );
-    
+
     progress.complete('Project created successfully!');
-    
+
     logger.info('');
-    logger.success('✓ Project "$projectName" created at: ${Directory.current.path}/$projectName');
+    logger.success(
+      '✓ Project "$projectName" created at: ${Directory.current.path}/$projectName',
+    );
     logger.info('');
     logger.info('Next steps:');
     logger.info('  cd $projectName');
     logger.info('  flutter pub get');
     logger.info('  flutter run');
-    
   } catch (e) {
     logger.err('Error: $e');
     exit(1);

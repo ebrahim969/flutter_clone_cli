@@ -29,7 +29,9 @@ class FlutterTemplateCreator {
     //! Check if pubspec.yaml exists in template
     final templatePubspec = File(path.join(templatePath, 'pubspec.yaml'));
     if (!await templatePubspec.exists()) {
-      throw Exception('Template is not a valid Flutter project (no pubspec.yaml)');
+      throw Exception(
+        'Template is not a valid Flutter project (no pubspec.yaml)',
+      );
     }
 
     //! Create target directory
@@ -58,17 +60,20 @@ class FlutterTemplateCreator {
 
   Future<String> _getProjectNameFromPubspec(File pubspecFile) async {
     final content = await pubspecFile.readAsString();
-    final nameMatch = RegExp(r'^name:\s*(.+)$', multiLine: true).firstMatch(content);
+    final nameMatch = RegExp(
+      r'^name:\s*(.+)$',
+      multiLine: true,
+    ).firstMatch(content);
     return nameMatch?.group(1)?.trim() ?? 'template_project';
   }
 
   Future<void> _copyDirectory(Directory source, Directory destination) async {
     await for (final entity in source.list(recursive: false)) {
       final name = path.basename(entity.path);
-      
+
       //! Skip hidden files/folders and build artifacts
-      if (name.startsWith('.') || 
-          name == 'build' || 
+      if (name.startsWith('.') ||
+          name == 'build' ||
           name == '.dart_tool' ||
           name == '.flutter-plugins' ||
           name == '.flutter-plugins-dependencies') {
@@ -131,12 +136,15 @@ class FlutterTemplateCreator {
     await _updateIosPackageId(projectDir, packageId);
   }
 
-  Future<void> _updateAndroidPackageId(Directory projectDir, String packageId) async {
+  Future<void> _updateAndroidPackageId(
+    Directory projectDir,
+    String packageId,
+  ) async {
     //! Update build.gradle
     final buildGradleFile = File(
       path.join(projectDir.path, 'android', 'app', 'build.gradle'),
     );
-    
+
     if (await buildGradleFile.exists()) {
       var content = await buildGradleFile.readAsString();
       content = content.replaceAll(
@@ -190,7 +198,10 @@ class FlutterTemplateCreator {
     }
   }
 
-  Future<void> _updateIosPackageId(Directory projectDir, String packageId) async {
+  Future<void> _updateIosPackageId(
+    Directory projectDir,
+    String packageId,
+  ) async {
     //! Update Info.plist
     final infoPlistFile = File(
       path.join(projectDir.path, 'ios', 'Runner', 'Info.plist'),
@@ -207,12 +218,7 @@ class FlutterTemplateCreator {
 
     //! Update project.pbxproj
     final pbxprojFile = File(
-      path.join(
-        projectDir.path,
-        'ios',
-        'Runner.xcodeproj',
-        'project.pbxproj',
-      ),
+      path.join(projectDir.path, 'ios', 'Runner.xcodeproj', 'project.pbxproj'),
     );
 
     if (await pbxprojFile.exists()) {
@@ -244,10 +250,10 @@ class FlutterTemplateCreator {
     String newValue,
   ) async {
     await for (final entity in dir.list(recursive: true)) {
-      if (entity is File && 
-          (entity.path.endsWith('.dart') || 
-           entity.path.endsWith('.yaml') ||
-           entity.path.endsWith('.md'))) {
+      if (entity is File &&
+          (entity.path.endsWith('.dart') ||
+              entity.path.endsWith('.yaml') ||
+              entity.path.endsWith('.md'))) {
         await _replaceInFile(entity.path, oldValue, newValue);
       }
     }
