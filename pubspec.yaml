@@ -1,6 +1,6 @@
 name: flutter_clone_cli
 description: A CLI tool to create Flutter projects from custom templates
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/ibrahimelnemrtasawk-dev/flutter_clone_cli
 
 environment:
